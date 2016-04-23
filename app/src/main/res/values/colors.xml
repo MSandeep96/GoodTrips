@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorActiveTab">#2f2</color>
     <color name="colorActiveBut">#fff</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorTransBlack">#8000</color>
 </resources>
