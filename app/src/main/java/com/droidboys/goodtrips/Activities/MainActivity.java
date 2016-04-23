@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         NavigationTabBar ntb=(NavigationTabBar)findViewById(R.id.ntb_cm);
         mViewPager=(ViewPager)findViewById(R.id.vp_cm);
-        mViewPager.setOffscreenPageLimit(3);
+        mViewPager.setOffscreenPageLimit(4);
         mPagerAdap=new MyAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdap);
         ntb.setViewPager(mViewPager);

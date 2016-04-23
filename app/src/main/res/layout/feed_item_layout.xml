@@ -2,29 +2,40 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="190dp"
-    android:padding="16dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    android:layout_marginTop="10dp">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:padding="16dp">
+
         <ImageView
-            android:id="@+id/prof_iv_fit"
+            android:id="@+id/prof_iv_fil"
             android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
         <TextView
             android:id="@+id/user_tv_fil"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/prof_iv_fil"
+            android:layout_toRightOf="@+id/prof_iv_fil" />
 
         <ImageView
+            android:id="@+id/feed_iv_fil"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/feed_iv_fit" />
+            android:layout_below="@+id/prof_iv_fil"
+            android:adjustViewBounds="true" />
+
         <TextView
+            android:id="@+id/desc_tv_fil"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:id="@+id/desc_tv_fil"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/feed_iv_fil" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>
