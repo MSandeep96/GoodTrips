@@ -49,6 +49,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     public void onBindViewHolder(final FeedViewHolder holder, int position) {
         holder.userName.setText(mItems.get(position).getUserName());
         holder.desc.setText(mItems.get(position).getDesc());
+        holder.cityName.setText(mItems.get(position).getPname());
         mImageLoader.get(mItems.get(position).getProf_pic(), new ImageLoader.ImageListener() {
             @Override
             public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
@@ -90,12 +91,14 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         ImageView prof;
         TextView desc;
         ImageView feedImage;
+        TextView cityName;
         public FeedViewHolder(View itemView) {
             super(itemView);
             userName=(TextView)itemView.findViewById(R.id.user_tv_fil);
             prof=(ImageView)itemView.findViewById(R.id.prof_iv_fil);
             desc=(TextView)itemView.findViewById(R.id.desc_tv_fil);
             feedImage=(ImageView)itemView.findViewById(R.id.feed_iv_fil);
+            cityName=(TextView)itemView.findViewById(R.id.city_name_tv_fil);
         }
     }
 }
