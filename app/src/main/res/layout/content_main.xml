@@ -2,11 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.MainActivity"
     tools:showIn="@layout/activity_main">
-
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_cm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.gigamole.library.NavigationTabBar
+        android:layout_gravity="bottom"
+        android:id="@+id/ntb_cm"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#000"
+        app:ntb_animation_duration="200"
+        app:ntb_active_color="#fff"
+        app:ntb_inactive_color="#000"
+        app:ntb_titled="true"
+        app:ntb_title_mode="active"/>
 
 </LinearLayout>
