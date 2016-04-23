@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -40,6 +41,7 @@ public class FeedFragment extends Fragment {
     private FeedAdapter mAdapter;
     private VolleySingleton mVolley;
     private RequestQueue mQueue;
+    private ProgressBar mProgBar;
 
     public FeedFragment() {
         // Required empty public constructor
@@ -59,6 +61,7 @@ public class FeedFragment extends Fragment {
         mContext=getContext();
         View mView= inflater.inflate(R.layout.fragment_feed, container, false);
         RecyclerView mRecy=(RecyclerView)mView.findViewById(R.id.rv_ff);
+        mProgBar=(ProgressBar)mView.findViewById(R.id.prog_bar_ff);
         mRecy.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter=new FeedAdapter(mContext);
         mRecy.setAdapter(mAdapter);
@@ -70,6 +73,7 @@ public class FeedFragment extends Fragment {
         JsonArrayRequest mReq=new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+                mProgBar.setVisibility(View.GONE);
                 Gson gson=new GsonBuilder().create();
                 Feed[] items=gson.fromJson(response.toString(),Feed[].class);
                 mAdapter.addItems(new ArrayList<>(Arrays.asList(items)));
@@ -77,7 +81,7 @@ public class FeedFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // TODO: 23-Apr-16 Handle error codes
+                // TODO: 24-Apr-16 error
             }
         });
         mQueue.add(mReq);

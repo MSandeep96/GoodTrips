@@ -7,4 +7,6 @@
     <color name="colorActiveBut">#fff</color>
     <color name="colorWhite">#fff</color>
     <color name="colorTransBlack">#8000</color>
+    <color name="colorLightRed">#5F00</color>
+    <color name="colorLightBlue">#500F</color>
 </resources>

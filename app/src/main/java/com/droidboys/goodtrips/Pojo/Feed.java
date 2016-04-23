@@ -1,11 +1,14 @@
 package com.droidboys.goodtrips.Pojo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by Sandeep on 23-Apr-16.
  */
-public class Feed {
+public class Feed implements Parcelable{
     long Feedid;
     @SerializedName("place_name")
     String pname;
@@ -96,4 +99,49 @@ public class Feed {
     public void setUser_ID(long user_ID) {
         this.user_ID = user_ID;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(this.Feedid);
+        dest.writeString(this.pname);
+        dest.writeString(this.desc);
+        dest.writeString(this.userName);
+        dest.writeByte(mood ? (byte) 1 : (byte) 0);
+        dest.writeString(this.img);
+        dest.writeString(this.prof_pic);
+        dest.writeLong(this.place_ID);
+        dest.writeLong(this.user_ID);
+    }
+
+    public Feed() {
+    }
+
+    protected Feed(Parcel in) {
+        this.Feedid = in.readLong();
+        this.pname = in.readString();
+        this.desc = in.readString();
+        this.userName = in.readString();
+        this.mood = in.readByte() != 0;
+        this.img = in.readString();
+        this.prof_pic = in.readString();
+        this.place_ID = in.readLong();
+        this.user_ID = in.readLong();
+    }
+
+    public static final Creator<Feed> CREATOR = new Creator<Feed>() {
+        @Override
+        public Feed createFromParcel(Parcel source) {
+            return new Feed(source);
+        }
+
+        @Override
+        public Feed[] newArray(int size) {
+            return new Feed[size];
+        }
+    };
 }

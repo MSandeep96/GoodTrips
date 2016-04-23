@@ -1,24 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv_fil"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-    app:cardUseCompatPadding="true">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/ll_prof_cont"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/feed_iv_fil">
+            android:layout_below="@+id/feed_iv_fti">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/prof_iv_fil"
+                android:id="@+id/prof_iv_fti"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
@@ -26,36 +23,35 @@
                 app:civ_border_width="2dp" />
 
             <TextView
-                android:id="@+id/user_tv_fil"
-                android:layout_gravity="center"
+                android:id="@+id/user_tv_fti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="16dp"
                 android:textSize="30sp" />
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/feed_iv_fil"
+            android:id="@+id/feed_iv_fti"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="250dp"
             android:layout_alignParentTop="true"
             android:scaleType="centerCrop" />
 
         <TextView
-            android:id="@+id/desc_tv_fil"
+            android:id="@+id/desc_tv_fti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ll_prof_cont"
-            android:layout_marginTop="10dp"
-            android:maxLines="2" />
+            android:layout_marginTop="10dp" />
 
         <TextView
-            android:id="@+id/city_name_tv_fil"
+            android:id="@+id/city_name_tv_fti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/feed_iv_fil"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="10dp"
+            android:layout_alignBottom="@+id/feed_iv_fti"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@color/colorTransBlack"
             android:padding="8dp"
             android:textColor="@color/colorWhite"
@@ -63,19 +59,19 @@
             android:textStyle="italic" />
 
         <LinearLayout
-            android:layout_below="@+id/desc_tv_fil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/desc_tv_fti"
             android:orientation="horizontal">
 
 
             <TextView
-                android:id="@+id/date_tv_fil"
+                android:id="@+id/date_tv_fti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <com.github.ivbaranov.mfb.MaterialFavoriteButton
-                android:id="@+id/mfb_fil"
+                android:id="@+id/mfb_fti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
@@ -89,4 +85,4 @@
 
         </LinearLayout>
     </RelativeLayout>
-</android.support.v7.widget.CardView>
+</ScrollView>

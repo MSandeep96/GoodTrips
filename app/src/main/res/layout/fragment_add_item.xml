@@ -1,13 +1,29 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.droidboys.goodtrips.Fragments.AddItemFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+        android:id="@+id/places_fai"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:hint="Add Place"
+        app:pacv_googleMapsApiKey="AIzaSyDkEZhjmcgwIMuz_IHVU6D_oORI3RvCbcc"/>
 
-</FrameLayout>
+    <AutoCompleteTextView
+        android:id="@+id/autocomp_fai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write about your experience"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/sumbit_btn_fai"/>
+
+</LinearLayout>

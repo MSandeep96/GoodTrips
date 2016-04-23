@@ -1,6 +1,9 @@
 package com.droidboys.goodtrips.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +14,11 @@ import android.widget.TextView;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.droidboys.goodtrips.Activities.DetailActivity;
 import com.droidboys.goodtrips.Network.VolleySingleton;
 import com.droidboys.goodtrips.Pojo.Feed;
 import com.droidboys.goodtrips.R;
+import com.github.ivbaranov.mfb.MaterialFavoriteButton;
 
 import java.util.ArrayList;
 
@@ -46,7 +51,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     }
 
     @Override
-    public void onBindViewHolder(final FeedViewHolder holder, int position) {
+    public void onBindViewHolder(final FeedViewHolder holder, final int position) {
         holder.userName.setText(mItems.get(position).getUserName());
         holder.desc.setText(mItems.get(position).getDesc());
         holder.cityName.setText(mItems.get(position).getPname());
@@ -72,13 +77,21 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
             }
         });
-       /* holder.itemView.setOnClickListener(new View.OnClickListener() {
+        if(mItems.get(position).isMood()) {
+            holder.mfb.setFavorite(true);
+            holder.mCv.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.colorLightBlue));
+        }else{
+            holder.mfb.setFavorite(false);
+            holder.mCv.setCardBackgroundColor(ContextCompat.getColor(mContext,R.color.colorLightRed));
+        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: 23-Apr-16
+                Intent mIntent=new Intent(mContext, DetailActivity.class);
+                mIntent.putExtra("extraDetail",mItems.get(position));
+                mContext.startActivity(mIntent);
             }
-        });*/
-
+        });
     }
 
     @Override
@@ -92,13 +105,17 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
         TextView desc;
         ImageView feedImage;
         TextView cityName;
+        MaterialFavoriteButton mfb;
+        CardView mCv;
         public FeedViewHolder(View itemView) {
             super(itemView);
+            mCv=(CardView)itemView.findViewById(R.id.cv_fil);
             userName=(TextView)itemView.findViewById(R.id.user_tv_fil);
             prof=(ImageView)itemView.findViewById(R.id.prof_iv_fil);
             desc=(TextView)itemView.findViewById(R.id.desc_tv_fil);
             feedImage=(ImageView)itemView.findViewById(R.id.feed_iv_fil);
             cityName=(TextView)itemView.findViewById(R.id.city_name_tv_fil);
+            mfb=(MaterialFavoriteButton)itemView.findViewById(R.id.mfb_fil);
         }
     }
 }
