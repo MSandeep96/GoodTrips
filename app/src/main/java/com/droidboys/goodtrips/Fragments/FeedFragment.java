@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.android.volley.Request;
@@ -42,6 +43,7 @@ public class FeedFragment extends Fragment {
     private VolleySingleton mVolley;
     private RequestQueue mQueue;
     private ProgressBar mProgBar;
+    private ImageView mImageView;
 
     public FeedFragment() {
         // Required empty public constructor
@@ -63,6 +65,7 @@ public class FeedFragment extends Fragment {
         RecyclerView mRecy=(RecyclerView)mView.findViewById(R.id.rv_ff);
         mProgBar=(ProgressBar)mView.findViewById(R.id.prog_bar_ff);
         mRecy.setLayoutManager(new LinearLayoutManager(getContext()));
+        mImageView=(ImageView)mView.findViewById(R.id.iv_ff);
         mAdapter=new FeedAdapter(mContext);
         mRecy.setAdapter(mAdapter);
         getFeed(ConstantsProj.BASE_URL);
@@ -81,7 +84,8 @@ public class FeedFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // TODO: 24-Apr-16 error
+                mProgBar.setVisibility(View.GONE);
+                mImageView.setVisibility(View.VISIBLE);
             }
         });
         mQueue.add(mReq);

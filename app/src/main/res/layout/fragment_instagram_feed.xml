@@ -15,4 +15,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 
+    <ImageView
+        android:id="@+id/iv_fif"
+        android:visibility="gone"
+        android:src="@drawable/noconnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
 </FrameLayout>

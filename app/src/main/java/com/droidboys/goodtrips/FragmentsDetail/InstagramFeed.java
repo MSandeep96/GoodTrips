@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.android.volley.Request;
@@ -44,6 +45,7 @@ public class InstagramFeed extends Fragment {
     private int pastVisiblesItems;
     private boolean loading;
     private ProgressBar mProgressBar;
+    private ImageView mImageView;
 
     public InstagramFeed() {
         // Required empty public constructor
@@ -64,6 +66,7 @@ public class InstagramFeed extends Fragment {
         View mView= inflater.inflate(R.layout.fragment_instagram_feed, container, false);
         RecyclerView mRecyclerView=(RecyclerView)mView.findViewById(R.id.rv_fif);
         mProgressBar=(ProgressBar)mView.findViewById(R.id.prog_bar_fif);
+        mImageView=(ImageView)mView.findViewById(R.id.iv_fif);
         mLineMan=new LinearLayoutManager(mContext);
         mRecyclerView.setLayoutManager(mLineMan);
         mAdapter=new InstaAdapter(mContext);
@@ -95,6 +98,7 @@ public class InstagramFeed extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
+                    mProgressBar.setVisibility(View.GONE);
                     nextUrl = response.getJSONObject("pagination").getString("next_url");
                     JSONArray mImgs = response.getJSONArray("data");
                     ArrayList<String> mImgUrls = new ArrayList<>();
@@ -110,7 +114,8 @@ public class InstagramFeed extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                mProgressBar.setVisibility(View.GONE);
+                mImageView.setVisibility(View.VISIBLE);
             }
         });
         mReqQue.add(mJsonObj);
@@ -141,6 +146,7 @@ public class InstagramFeed extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                mProgressBar.setVisibility(View.GONE);
 
             }
         });
