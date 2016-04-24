@@ -1,5 +1,6 @@
 package com.droidboys.goodtrips.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,6 +23,7 @@ import com.droidboys.goodtrips.Fragments.ProfileFragment;
 import com.droidboys.goodtrips.Fragments.SearchFragment;
 import com.droidboys.goodtrips.Fragments.WishPlacesFrag;
 import com.droidboys.goodtrips.R;
+import com.droidboys.goodtrips.Utils.PrefsManager;
 import com.gigamole.library.NavigationTabBar;
 
 import java.util.ArrayList;
@@ -36,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if(!PrefsManager.getLoggedIn(this)){
+            Intent inte=new Intent(this,LoginActivity.class);
+            startActivityForResult(inte,0012);
+        }
         setSupportActionBar(toolbar);
         NavigationTabBar ntb=(NavigationTabBar)findViewById(R.id.ntb_cm);
         mViewPager=(ViewPager)findViewById(R.id.vp_cm);
