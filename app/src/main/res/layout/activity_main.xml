@@ -25,6 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="?attr/colorPrimary"
+            app:ntb_active_color="@color/colorWhite"
+            app:ntb_inactive_color="@color/colorTransWhite"
             app:ntb_animation_duration="200"
             app:ntb_titled="true"
             app:ntb_title_mode="active"/>
