@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         mPagerAdap=new MyAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdap);
         ntb.setViewPager(mViewPager);
-        int actColor=ContextCompat.getColor(this,R.color.colorActiveTab);
+        int actColor=ContextCompat.getColor(this,R.color.colorFourth);
         final ArrayList<NavigationTabBar.Model> models = new ArrayList<>();
         models.add(new NavigationTabBar.Model(
                 ContextCompat.getDrawable(this,R.drawable.home), actColor));

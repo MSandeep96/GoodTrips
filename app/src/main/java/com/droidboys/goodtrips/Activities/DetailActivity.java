@@ -37,16 +37,16 @@ public class DetailActivity extends AppCompatActivity implements MeInterface{
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         thisItem=getIntent().getParcelableExtra("extraDetail");
         NavigationTabBar ntb=(NavigationTabBar)findViewById(R.id.ntb_cd);
-        int actColor= ContextCompat.getColor(this,R.color.colorActiveTab);
+        int actColor= ContextCompat.getColor(this,R.color.colorFourth);
         final ArrayList<NavigationTabBar.Model> models = new ArrayList<>();
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.home), actColor));
+                ContextCompat.getDrawable(this,R.drawable.home), actColor,"Feed"));
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.search), actColor));
+                ContextCompat.getDrawable(this,R.drawable.search), actColor,"Search"));
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.add_item), actColor));
+                ContextCompat.getDrawable(this,R.drawable.add_item), actColor,"Add"));
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.wishlist),actColor));
+                ContextCompat.getDrawable(this,R.drawable.wishlist),actColor,"Wishlist"));
         ntb.setModels(models);
         ntb.setActiveColor(ContextCompat.getColor(this,R.color.colorActiveBut));
         ViewPager mViewPager=(ViewPager)findViewById(R.id.vp_cd);

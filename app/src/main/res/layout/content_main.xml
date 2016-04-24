@@ -8,14 +8,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.MainActivity"
     tools:showIn="@layout/activity_main">
-    <com.gigamole.library.NavigationTabBar
-        android:id="@+id/ntb_cm"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#000"
-        app:ntb_animation_duration="200"
-        app:ntb_titled="true"
-        app:ntb_title_mode="active"/>
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_cm"
         android:layout_width="match_parent"

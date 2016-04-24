@@ -19,6 +19,16 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+
+        <com.gigamole.library.NavigationTabBar
+            android:id="@+id/ntb_cm"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="?attr/colorPrimary"
+            app:ntb_animation_duration="200"
+            app:ntb_titled="true"
+            app:ntb_title_mode="active"/>
+
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main" />
