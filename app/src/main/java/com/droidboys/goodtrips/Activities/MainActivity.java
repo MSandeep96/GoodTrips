@@ -43,18 +43,19 @@ public class MainActivity extends AppCompatActivity {
         mPagerAdap=new MyAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mPagerAdap);
         ntb.setViewPager(mViewPager);
+        int arr[]=getResources().getIntArray(R.array.nav_color);
         int actColor=ContextCompat.getColor(this,R.color.colorFourth);
         final ArrayList<NavigationTabBar.Model> models = new ArrayList<>();
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.home), actColor));
+                ContextCompat.getDrawable(this,R.drawable.home),arr[0],"Home"));
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.search), actColor));
+                ContextCompat.getDrawable(this,R.drawable.search), arr[1],"Search"));
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.add_item), actColor));
+                ContextCompat.getDrawable(this,R.drawable.add_item), arr[2],"Add"));
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.wishlist),actColor));
+                ContextCompat.getDrawable(this,R.drawable.wishlist),arr[3],"Wishes"));
         models.add(new NavigationTabBar.Model(
-                ContextCompat.getDrawable(this,R.drawable.profile),actColor));
+                ContextCompat.getDrawable(this,R.drawable.profile),arr[4],"Profile"));
         ntb.setModels(models);
         ntb.setActiveColor(ContextCompat.getColor(this,R.color.colorActiveBut));
     }

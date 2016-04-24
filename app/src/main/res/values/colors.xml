@@ -10,4 +10,13 @@
     <color name="colorLightRed">#5F00</color>
     <color name="colorLightBlue">#500F</color>
     <color name="colorTransWhite">#5fff</color>
+    <array name="nav_color">
+        <item>#f44336</item>
+        <item>#2196F3</item>
+        <item>#8BC34A</item>
+        <item>#FF5722</item>
+        <item>#E91E63</item>
+
+
+    </array>
 </resources>
