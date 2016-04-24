@@ -4,10 +4,22 @@
     android:layout_height="match_parent"
     tools:context="com.droidboys.goodtrips.Fragments.ProfileFragment">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_fp"
-        android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/portrait"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:text="Ching Lu"
+        android:textSize="26sp"
+        android:layout_below="@+id/iv_fp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_fp"/>
     
 
 </RelativeLayout>
