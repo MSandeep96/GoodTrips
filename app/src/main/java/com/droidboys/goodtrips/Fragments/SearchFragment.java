@@ -12,7 +12,7 @@ import com.droidboys.goodtrips.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment  {
 
 
     public SearchFragment() {

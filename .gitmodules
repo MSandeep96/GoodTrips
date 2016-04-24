@@ -1,0 +1,3 @@
+[submodule "havenondemand-android"]
+	path = havenondemand-android
+	url = https://github.com/HPE-Haven-OnDemand/havenondemand-android

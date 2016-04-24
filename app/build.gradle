@@ -33,6 +33,7 @@ dependencies {
     compile 'com.havenondemand:hodresponseparser:2.0'
     compile 'com.github.ivbaranov:materialfavoritebutton:0.1.2'
     compile 'com.seatgeek:placesautocomplete:0.2-SNAPSHOT'
+
 }
 
 repositories {
