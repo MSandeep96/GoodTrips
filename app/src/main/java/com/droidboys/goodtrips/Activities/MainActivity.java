@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if(!PrefsManager.getLoggedIn(this)){
+        if(PrefsManager.getLoggedIn(this)){
             Intent inte=new Intent(this,LoginActivity.class);
             startActivityForResult(inte,0012);
         }
